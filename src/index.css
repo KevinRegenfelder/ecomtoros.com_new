@@ -119,15 +119,15 @@
 /* Infinite sliding animation */
 @keyframes slide-infinite {
   0% {
-    transform: translateX(-25%);
+    transform: translateX(0);
   }
   100% {
-    transform: translateX(-75%);
+    transform: translateX(-100%);
   }
 }
 
 .animate-slide-infinite {
-  animation: slide-infinite 60s linear infinite;
+  animation: slide-infinite 30s linear infinite;
 }
 
 /* Pause animation on hover */

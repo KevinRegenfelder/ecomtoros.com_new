@@ -25,7 +25,10 @@ const Stats = () => {
           setIsVisible(true);
         }
       },
-      { threshold: 0.5 }
+      { 
+        threshold: 0.2, 
+        rootMargin: '0px 0px -50px 0px' 
+      }
     );
 
     if (sectionRef.current) {
@@ -122,7 +125,7 @@ const Stats = () => {
     <section 
       id="portfolio" 
       ref={sectionRef} 
-      className="py-20 relative overflow-hidden"
+      className="py-12 sm:py-16 md:py-20 relative overflow-hidden"
       style={{
         background: `radial-gradient(circle at 50% 50%, rgba(15, 23, 42, 0.3) 0%, rgba(30, 41, 59, 0.2) 25%, transparent 50%)`
       }}
@@ -140,26 +143,26 @@ const Stats = () => {
         ></div>
       </div>
       
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
             <span className="bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent">
               We are pioneers 
             </span>
             <br />
             <span className="text-white">in the Crypto Hardware space</span>
           </h2>
-          <p className="text-xl text-secondary-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-secondary-300 max-w-3xl mx-auto leading-relaxed px-2">
           We are specialists in crypto hardware and Web3 go-to-market. Our mission is to bring blockchain products to life — accessible, localized, and built to grow in the German-speaking world.
           </p>
         </div>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 mb-12 sm:mb-16">
           {stats.map((stat, index) => (
             <div
               key={stat.label}
-              className={`group relative p-8 rounded-2xl bg-secondary-800/50 backdrop-blur-sm border border-primary-500/20 hover:border-primary-400/50 transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-primary-500/20 text-center ${
+              className={`group relative p-6 sm:p-8 rounded-xl sm:rounded-2xl bg-secondary-800/50 backdrop-blur-sm border border-primary-500/20 hover:border-primary-400/50 transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-primary-500/20 text-center ${
                 isVisible 
                   ? 'translate-y-0 opacity-100' 
                   : 'translate-y-10 opacity-0'
@@ -169,46 +172,47 @@ const Stats = () => {
               }}
             >
               {/* Animated Background */}
-              <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${stat.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}></div>
+              <div className={`absolute inset-0 rounded-xl sm:rounded-2xl bg-gradient-to-br ${stat.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}></div>
               
               {/* Icon */}
-              <div className="relative mb-6 flex justify-center">
-                <stat.icon className="w-12 h-12 text-primary-400 group-hover:text-primary-300 transition-colors duration-300" />
-                <div className="absolute inset-0 w-12 h-12 bg-primary-400 rounded-full blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
+              <div className="relative mb-4 sm:mb-6 flex justify-center">
+                <stat.icon className="w-10 h-10 sm:w-12 sm:h-12 text-primary-400 group-hover:text-primary-300 transition-colors duration-300" />
+                <div className="absolute inset-0 w-10 h-10 sm:w-12 sm:h-12 bg-primary-400 rounded-full blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
               </div>
 
               {/* Animated Number */}
-              <div className="mb-4">
-                <span className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white to-secondary-300 bg-clip-text text-transparent">
+              <div className="mb-3 sm:mb-4">
+                <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-white to-secondary-300 bg-clip-text text-transparent">
                   {formatNumber(stat.value, stat.suffix, stat.label === 'Managed Budget')}
                 </span>
               </div>
 
               {/* Label */}
-              <h3 className="text-xl font-semibold mb-2 text-white group-hover:text-primary-300 transition-colors duration-300">
+              <h3 className="text-lg sm:text-xl font-semibold mb-2 text-white group-hover:text-primary-300 transition-colors duration-300">
                 {stat.label}
               </h3>
 
               {/* Description */}
-              <p className="text-secondary-400 group-hover:text-secondary-300 transition-colors duration-300 text-sm">
+              <p className="text-xs sm:text-sm text-secondary-400 group-hover:text-secondary-300 transition-colors duration-300 leading-relaxed">
                 {stat.description}
               </p>
 
               {/* Animated Border */}
-              <div className="absolute inset-0 rounded-2xl border-2 border-transparent bg-gradient-to-r from-primary-500 to-secondary-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
-              <div className="absolute inset-0.5 rounded-2xl bg-secondary-800 -z-10"></div>
+              <div className="absolute inset-0 rounded-xl sm:rounded-2xl border-2 border-transparent bg-gradient-to-r from-primary-500 to-secondary-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
+              <div className="absolute inset-0.5 rounded-xl sm:rounded-2xl bg-secondary-800 -z-10"></div>
             </div>
           ))}
         </div>
-           {/* Full Width Map Box */}
-           <div className={`mb-16 transition-all duration-1000 delay-300 ${
+        
+        {/* Full Width Map Box */}
+        <div className={`mb-12 sm:mb-16 transition-all duration-1000 delay-300 ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
-          <div className="w-full bg-gradient-to-br from-primary-900/20 to-secondary-900/20 rounded-2xl border border-primary-500/20 overflow-hidden p-8">
-            <div className="flex flex-col lg:flex-row items-center gap-8">
+          <div className="w-full bg-gradient-to-br from-primary-900/20 to-secondary-900/20 rounded-xl sm:rounded-2xl border border-primary-500/20 overflow-hidden p-6 sm:p-8">
+            <div className="flex flex-col lg:flex-row items-center gap-6 sm:gap-8">
               {/* Text Section - Left */}
               <div className="flex-1 text-center lg:text-left">
-                <h3 className="text-2xl md:text-3xl font-bold mb-4">
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4">
                   <span className="text-white">
                     From <span className="bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent">Germany</span> to <span className="bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent">Austria</span>
                   </span>
@@ -217,9 +221,9 @@ const Stats = () => {
                     all the way to <span className="bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent">Switzerland</span>
                   </span>
                   <br />
-                  <span className="bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent text-xl">we got the whole DACH section for you!</span>
+                  <span className="bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent text-lg sm:text-xl">we got the whole DACH section for you!</span>
                 </h3>
-                <p className="text-lg text-secondary-300 mt-4">
+                <p className="text-base sm:text-lg text-secondary-300 mt-3 sm:mt-4">
                   Strong connections across the German-speaking region with strategic positioning in all three countries.
                 </p>
               </div>
@@ -230,125 +234,63 @@ const Stats = () => {
                   <img 
                     src="/src/media/map/map.png" 
                     alt="DACH Region Map" 
-                    className="w-full h-auto object-cover rounded-xl"
+                    className="w-full h-auto object-cover rounded-lg sm:rounded-xl"
                   />
                   
                   {/* Animated Connection Points */}
-                  <svg className="absolute inset-0 w-full h-full pointer-events-none">
-                    {/* Germany to Austria */}
-                    <path
-                      d="M 250 150 Q 360 235 470 320"
-                      stroke="#3B82F6"
-                      strokeWidth="3"
-                      fill="transparent"
-                      className={`${
-                        isVisible ? 'opacity-100' : 'opacity-0'
-                      }`}
-                      style={{ 
-                        strokeDasharray: isVisible ? '1000' : '0',
-                        strokeDashoffset: isVisible ? '0' : '1000',
-                        transition: 'stroke-dasharray 3s cubic-bezier(0.25, 0.46, 0.45, 0.94), stroke-dashoffset 3s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 1.5s ease-in-out',
-                        transitionDelay: isVisible ? '0.5s' : '0s'
-                      }}
-                    />
-                    
-                    {/* Austria to Switzerland */}
-                    <path
-                      d="M 470 320 Q 335 360 200 400"
-                      stroke="#3B82F6"
-                      strokeWidth="3"
-                      fill="transparent"
-                      className={`${
-                        isVisible ? 'opacity-100' : 'opacity-0'
-                      }`}
-                      style={{ 
-                        strokeDasharray: isVisible ? '1000' : '0',
-                        strokeDashoffset: isVisible ? '0' : '1000',
-                        transition: 'stroke-dasharray 3s cubic-bezier(0.25, 0.46, 0.45, 0.94), stroke-dashoffset 3s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 1.5s ease-in-out',
-                        transitionDelay: isVisible ? '1s' : '0s'
-                      }}
-                    />
-                    
-                    {/* Switzerland to Germany */}
-                    <path
-                      d="M 200 400 Q 225 275 250 150"
-                      stroke="#3B82F6"
-                      strokeWidth="3"
-                      fill="transparent"
-                      className={`${
-                        isVisible ? 'opacity-100' : 'opacity-0'
-                      }`}
-                      style={{ 
-                        strokeDasharray: isVisible ? '1000' : '0',
-                        strokeDashoffset: isVisible ? '0' : '1000',
-                        transition: 'stroke-dasharray 3s cubic-bezier(0.25, 0.46, 0.45, 0.94), stroke-dashoffset 3s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 1.5s ease-in-out',
-                        transitionDelay: isVisible ? '1.5s' : '0s'
-                      }}
-                    />
-                    
+                  <div className="absolute inset-0 pointer-events-none">
                     {/* Germany Point */}
-                    <circle
-                      cx="250"
-                      cy="150"
-                      r="8"
-                      fill="#3B82F6"
-                      className={`${
-                        isVisible ? 'animate-pulse opacity-100' : 'opacity-0'
-                      }`}
+                    <div 
+                      className="absolute w-4 h-4 sm:w-5 sm:h-5 bg-primary-400 rounded-full animate-pulse shadow-lg shadow-primary-400/50"
                       style={{ 
+                        top: '25%',
+                        left: '40%',
                         animationDelay: isVisible ? '0.2s' : '0s',
+                        opacity: isVisible ? 1 : 0,
                         transition: 'opacity 1s ease-in-out'
                       }}
                     />
-                    
                     {/* Austria Point */}
-                    <circle
-                      cx="470"
-                      cy="320"
-                      r="8"
-                      fill="#3B82F6"
-                      className={`${
-                        isVisible ? 'animate-pulse opacity-100' : 'opacity-0'
-                      }`}
+                    <div 
+                      className="absolute w-4 h-4 sm:w-5 sm:h-5 bg-primary-400 rounded-full animate-pulse shadow-lg shadow-primary-400/50"
                       style={{ 
+                        top: '55%',
+                        left: '80%',
                         animationDelay: isVisible ? '0.5s' : '0s',
+                        opacity: isVisible ? 1 : 0,
                         transition: 'opacity 1s ease-in-out'
                       }}
                     />
-                    
                     {/* Switzerland Point */}
-                    <circle
-                      cx="200"
-                      cy="400"
-                      r="8"
-                      fill="#3B82F6"
-                      className={`${
-                        isVisible ? 'animate-pulse opacity-100' : 'opacity-0'
-                      }`}
+                    <div 
+                      className="absolute w-4 h-4 sm:w-5 sm:h-5 bg-primary-400 rounded-full animate-pulse shadow-lg shadow-primary-400/50"
                       style={{ 
+                        top: '65%',
+                        left: '35%',
                         animationDelay: isVisible ? '1s' : '0s',
+                        opacity: isVisible ? 1 : 0,
                         transition: 'opacity 1s ease-in-out'
                       }}
                     />
-                  </svg>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-                {/* Achievement Badge */}
-   {/* Achievement Badge */}
-                <div className={`mt-16 flex justify-center transition-all duration-1000 delay-500 ${
+        
+        {/* Achievement Badge */}
+        <div className={`mt-12 sm:mt-16 flex justify-center transition-all duration-1000 delay-500 ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
-          <div className="inline-flex items-center space-x-3 px-8 py-4 bg-gradient-to-r from-primary-600/20 to-secondary-600/20 rounded-full border border-primary-500/30 backdrop-blur-sm">
-            <Rocket className="w-6 h-6 text-primary-400" />
-            <span className="text-white font-semibold">We’ll help you grow your brand across the DACH region.</span>
+          <div className="inline-flex items-center space-x-2 sm:space-x-3 px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-primary-600/20 to-secondary-600/20 rounded-full border border-primary-500/30 backdrop-blur-sm">
+            <Rocket className="w-5 h-5 sm:w-6 sm:h-6 text-primary-400" />
+            <span className="text-sm sm:text-base text-white font-semibold">We'll help you grow your brand across the DACH region.</span>
             <div className="flex space-x-1">
               {[...Array(3)].map((_, i) => (
                 <div
                   key={i}
-                  className="w-2 h-2 bg-primary-400 rounded-full animate-pulse"
+                  className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-primary-400 rounded-full animate-pulse"
                   style={{ animationDelay: `${i * 0.1}s` }}
                 ></div>
               ))}

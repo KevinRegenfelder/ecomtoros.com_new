@@ -34,7 +34,10 @@ const Contact = () => {
           setIsVisible(true);
         }
       },
-      { threshold: 0.2 }
+      { 
+        threshold: 0.2, 
+        rootMargin: '0px 0px -50px 0px' 
+      }
     );
 
     if (sectionRef.current) {
@@ -138,20 +141,14 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email Us',
-      value: 'hello@crypticweb3.com',
+      value: 'mail@eomtoros.com',
       description: 'Send us an email anytime'
     },
     {
       icon: Phone,
-      title: 'Call Us',
-      value: '+1 (555) 123-4567',
-      description: 'Mon-Fri from 8am to 6pm'
-    },
-    {
-      icon: MapPin,
-      title: 'Visit Us',
-      value: 'San Francisco, CA',
-      description: 'Come say hello at our office'
+      title: 'Message Us',
+      value: '@ecomtoros',
+      description: 'Send us a message on Telegram'
     }
   ];
 
@@ -159,7 +156,7 @@ const Contact = () => {
     <section 
       id="contact" 
       ref={sectionRef} 
-      className="py-20 relative overflow-hidden"
+      className="py-12 sm:py-16 md:py-20 relative overflow-hidden"
       style={{
         background: `radial-gradient(circle at 50% 50%, rgba(15, 23, 42, 0.3) 0%, rgba(30, 41, 59, 0.2) 25%, transparent 50%)`
       }}
@@ -177,27 +174,27 @@ const Contact = () => {
         ></div>
       </div>
       
-      <div className="container mx-auto px-4 relative z-10">
-        <div className={`text-center mb-16 transition-all duration-1000 ${
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
+        <div className={`text-center mb-12 sm:mb-16 transition-all duration-1000 ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
             <span className="bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent">
               Get In Touch
             </span>
           </h2>
-          <p className="text-xl text-secondary-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-secondary-300 max-w-3xl mx-auto leading-relaxed px-2">
             Ready to start your Web3 journey? Let's discuss how we can help you build the future.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 sm:gap-12">
           {/* Contact Info */}
-          <div className="lg:col-span-1 space-y-8">
+          <div className="lg:col-span-1 space-y-6 sm:space-y-8">
             {contactInfo.map((info, index) => (
               <div
                 key={info.title}
-                className={`group p-6 rounded-2xl bg-secondary-800/50 backdrop-blur-sm border border-primary-500/20 hover:border-primary-400/50 transition-all duration-500 hover:transform hover:scale-105 ${
+                className={`group p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-secondary-800/50 backdrop-blur-sm border border-primary-500/20 hover:border-primary-400/50 transition-all duration-500 hover:transform hover:scale-105 ${
                   isVisible 
                     ? 'translate-y-0 opacity-100' 
                     : 'translate-y-10 opacity-0'
@@ -206,36 +203,36 @@ const Contact = () => {
                   transitionDelay: isVisible ? `${index * 0.1}s` : '0s' 
                 }}
               >
-                <div className="flex items-start space-x-4">
+                <div className="flex items-start space-x-3 sm:space-x-4">
                   <div className="relative">
-                    <info.icon className="w-8 h-8 text-primary-400 group-hover:text-primary-300 transition-colors duration-300" />
-                    <div className="absolute inset-0 w-8 h-8 bg-primary-400 rounded-full blur-lg opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
+                    <info.icon className="w-6 h-6 sm:w-8 sm:h-8 text-primary-400 group-hover:text-primary-300 transition-colors duration-300" />
+                    <div className="absolute inset-0 w-6 h-6 sm:w-8 sm:h-8 bg-primary-400 rounded-full blur-lg opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-white mb-1">{info.title}</h3>
-                    <p className="text-primary-400 font-medium mb-1">{info.value}</p>
-                    <p className="text-secondary-400 text-sm">{info.description}</p>
+                    <h3 className="text-base sm:text-lg font-semibold text-white mb-1">{info.title}</h3>
+                    <p className="text-primary-400 font-medium mb-1 text-sm sm:text-base">{info.value}</p>
+                    <p className="text-secondary-400 text-xs sm:text-sm">{info.description}</p>
                   </div>
                 </div>
               </div>
             ))}
 
             {/* Additional Info */}
-            <div className={`p-6 rounded-2xl bg-gradient-to-br from-primary-600/20 to-secondary-600/20 border border-primary-500/30 transition-all duration-1000 delay-300 ${
+            <div className={`p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-gradient-to-br from-primary-600/20 to-secondary-600/20 border border-primary-500/30 transition-all duration-1000 delay-300 ${
               isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
             }`}>
-              <h3 className="text-lg font-semibold text-white mb-3">Why Choose Us?</h3>
-              <ul className="space-y-2 text-secondary-300 text-sm">
+              <h3 className="text-base sm:text-lg font-semibold text-white mb-3">Why Choose Us?</h3>
+              <ul className="space-y-2 text-secondary-300 text-xs sm:text-sm">
                 <li className="flex items-center space-x-2">
-                  <CheckCircle className="w-4 h-4 text-primary-400" />
+                  <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-primary-400" />
                   <span>24/7 Support Available</span>
                 </li>
                 <li className="flex items-center space-x-2">
-                  <CheckCircle className="w-4 h-4 text-primary-400" />
+                  <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-primary-400" />
                   <span>Free Initial Consultation</span>
                 </li>
                 <li className="flex items-center space-x-2">
-                  <CheckCircle className="w-4 h-4 text-primary-400" />
+                  <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-primary-400" />
                   <span>Industry Experts</span>
                 </li>
               </ul>
@@ -244,7 +241,7 @@ const Contact = () => {
 
           {/* Contact Form */}
           <div className="lg:col-span-2">
-            <div className={`p-8 rounded-2xl bg-secondary-800/50 backdrop-blur-sm border border-primary-500/20 transition-all duration-1000 delay-200 ${
+            <div className={`p-6 sm:p-8 rounded-xl sm:rounded-2xl bg-secondary-800/50 backdrop-blur-sm border border-primary-500/20 transition-all duration-1000 delay-200 ${
               isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
             }`}>
               <form 
@@ -253,36 +250,36 @@ const Contact = () => {
                 data-netlify="true" 
                 netlify-honeypot="bot-field"
                 onSubmit={handleSubmit} 
-                className="space-y-6"
+                className="space-y-4 sm:space-y-6"
               >
                 {/* Hidden input für Netlify */}
                 <input type="hidden" name="form-name" value="contact" />
                 <div className="hidden">
                   <input name="bot-field" />
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                   {/* Name Field */}
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-secondary-300 mb-2">
+                    <label htmlFor="name" className="block text-xs sm:text-sm font-medium text-secondary-300 mb-2">
                       Your Name *
                     </label>
                     <div className="relative">
-                      <User className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-secondary-400" />
+                      <User className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 text-secondary-400" />
                       <input
                         type="text"
                         id="name"
                         name="name"
                         value={formData.name}
                         onChange={handleChange}
-                        className={`w-full pl-12 pr-4 py-3 bg-secondary-700/50 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 text-white placeholder-secondary-400 ${
+                        className={`w-full pl-10 sm:pl-12 pr-4 py-2.5 sm:py-3 bg-secondary-700/50 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 text-white placeholder-secondary-400 text-sm sm:text-base ${
                           errors.name ? 'border-red-500' : 'border-secondary-600'
                         }`}
                         placeholder="John Doe"
                       />
                     </div>
                     {errors.name && (
-                      <p className="mt-1 text-sm text-red-400 flex items-center space-x-1">
-                        <AlertCircle className="w-4 h-4" />
+                      <p className="mt-1 text-xs sm:text-sm text-red-400 flex items-center space-x-1">
+                        <AlertCircle className="w-3 h-3 sm:w-4 sm:h-4" />
                         <span>{errors.name}</span>
                       </p>
                     )}
@@ -290,55 +287,55 @@ const Contact = () => {
 
                   {/* Email Field */}
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-secondary-300 mb-2">
+                    <label htmlFor="email" className="block text-xs sm:text-sm font-medium text-secondary-300 mb-2">
                       Email Address *
                     </label>
                     <div className="relative">
-                      <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-secondary-400" />
+                      <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 text-secondary-400" />
                       <input
                         type="email"
                         id="email"
                         name="email"
                         value={formData.email}
                         onChange={handleChange}
-                        className={`w-full pl-12 pr-4 py-3 bg-secondary-700/50 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 text-white placeholder-secondary-400 ${
+                        className={`w-full pl-10 sm:pl-12 pr-4 py-2.5 sm:py-3 bg-secondary-700/50 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 text-white placeholder-secondary-400 text-sm sm:text-base ${
                           errors.email ? 'border-red-500' : 'border-secondary-600'
                         }`}
                         placeholder="john@example.com"
                       />
                     </div>
                     {errors.email && (
-                      <p className="mt-1 text-sm text-red-400 flex items-center space-x-1">
-                        <AlertCircle className="w-4 h-4" />
+                      <p className="mt-1 text-xs sm:text-sm text-red-400 flex items-center space-x-1">
+                        <AlertCircle className="w-3 h-3 sm:w-4 sm:h-4" />
                         <span>{errors.email}</span>
                       </p>
                     )}
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                   {/* Telegram Field */}
                   <div>
-                    <label htmlFor="telegram" className="block text-sm font-medium text-secondary-300 mb-2">
+                    <label htmlFor="telegram" className="block text-xs sm:text-sm font-medium text-secondary-300 mb-2">
                       Telegram Username *
                     </label>
                     <div className="relative">
-                      <MessageSquare className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-secondary-400" />
+                      <MessageSquare className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 text-secondary-400" />
                       <input
                         type="text"
                         id="telegram"
                         name="telegram"
                         value={formData.telegram}
                         onChange={handleChange}
-                        className={`w-full pl-12 pr-4 py-3 bg-secondary-700/50 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 text-white placeholder-secondary-400 ${
+                        className={`w-full pl-10 sm:pl-12 pr-4 py-2.5 sm:py-3 bg-secondary-700/50 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 text-white placeholder-secondary-400 text-sm sm:text-base ${
                           errors.telegram ? 'border-red-500' : 'border-secondary-600'
                         }`}
                         placeholder="@johnexample"
                       />
                     </div>
                     {errors.telegram && (
-                      <p className="mt-1 text-sm text-red-400 flex items-center space-x-1">
-                        <AlertCircle className="w-4 h-4" />
+                      <p className="mt-1 text-xs sm:text-sm text-red-400 flex items-center space-x-1">
+                        <AlertCircle className="w-3 h-3 sm:w-4 sm:h-4" />
                         <span>{errors.telegram}</span>
                       </p>
                     )}
@@ -346,55 +343,55 @@ const Contact = () => {
 
                   {/* Subject Field */}
                   <div>
-                    <label htmlFor="subject" className="block text-sm font-medium text-secondary-300 mb-2">
+                    <label htmlFor="subject" className="block text-xs sm:text-sm font-medium text-secondary-300 mb-2">
                       Subject *
                     </label>
                     <div className="relative">
-                      <MessageSquare className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-secondary-400" />
+                      <MessageSquare className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 text-secondary-400" />
                       <input
                         type="text"
                         id="subject"
                         name="subject"
                         value={formData.subject}
                         onChange={handleChange}
-                        className={`w-full pl-12 pr-4 py-3 bg-secondary-700/50 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 text-white placeholder-secondary-400 ${
+                        className={`w-full pl-10 sm:pl-12 pr-4 py-2.5 sm:py-3 bg-secondary-700/50 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 text-white placeholder-secondary-400 text-sm sm:text-base ${
                           errors.subject ? 'border-red-500' : 'border-secondary-600'
                         }`}
                         placeholder="How can we help?"
                       />
                     </div>
                     {errors.subject && (
-                      <p className="mt-1 text-sm text-red-400 flex items-center space-x-1">
-                        <AlertCircle className="w-4 h-4" />
+                      <p className="mt-1 text-xs sm:text-sm text-red-400 flex items-center space-x-1">
+                        <AlertCircle className="w-3 h-3 sm:w-4 sm:h-4" />
                         <span>{errors.subject}</span>
                       </p>
                     )}
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                   {/* Project Name Field */}
                   <div>
-                    <label htmlFor="projectName" className="block text-sm font-medium text-secondary-300 mb-2">
+                    <label htmlFor="projectName" className="block text-xs sm:text-sm font-medium text-secondary-300 mb-2">
                       What is your project's name? *
                     </label>
                     <div className="relative">
-                      <Building className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-secondary-400" />
+                      <Building className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 text-secondary-400" />
                       <input
                         type="text"
                         id="projectName"
                         name="projectName"
                         value={formData.projectName}
                         onChange={handleChange}
-                        className={`w-full pl-12 pr-4 py-3 bg-secondary-700/50 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 text-white placeholder-secondary-400 ${
+                        className={`w-full pl-10 sm:pl-12 pr-4 py-2.5 sm:py-3 bg-secondary-700/50 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 text-white placeholder-secondary-400 text-sm sm:text-base ${
                           errors.projectName ? 'border-red-500' : 'border-secondary-600'
                         }`}
                         placeholder="OneKey, Tangem,..."
                       />
                     </div>
                     {errors.projectName && (
-                      <p className="mt-1 text-sm text-red-400 flex items-center space-x-1">
-                        <AlertCircle className="w-4 h-4" />
+                      <p className="mt-1 text-xs sm:text-sm text-red-400 flex items-center space-x-1">
+                        <AlertCircle className="w-3 h-3 sm:w-4 sm:h-4" />
                         <span>{errors.projectName}</span>
                       </p>
                     )}
@@ -402,17 +399,17 @@ const Contact = () => {
 
                   {/* Project Stage Field */}
                   <div>
-                    <label htmlFor="projectStage" className="block text-sm font-medium text-secondary-300 mb-2">
+                    <label htmlFor="projectStage" className="block text-xs sm:text-sm font-medium text-secondary-300 mb-2">
                       What is your project's current stage? *
                     </label>
                     <div className="relative">
-                      <Building className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-secondary-400" />
+                      <Building className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 text-secondary-400" />
                       <select
                         id="projectStage"
                         name="projectStage"
                         value={formData.projectStage}
                         onChange={handleChange}
-                        className={`w-full pl-12 pr-4 py-3 bg-secondary-700/50 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 text-white ${
+                        className={`w-full pl-10 sm:pl-12 pr-4 py-2.5 sm:py-3 bg-secondary-700/50 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 text-white text-sm sm:text-base ${
                           errors.projectStage ? 'border-red-500' : 'border-secondary-600'
                         }`}
                       >
@@ -426,8 +423,8 @@ const Contact = () => {
                       </select>
                     </div>
                     {errors.projectStage && (
-                      <p className="mt-1 text-sm text-red-400 flex items-center space-x-1">
-                        <AlertCircle className="w-4 h-4" />
+                      <p className="mt-1 text-xs sm:text-sm text-red-400 flex items-center space-x-1">
+                        <AlertCircle className="w-3 h-3 sm:w-4 sm:h-4" />
                         <span>{errors.projectStage}</span>
                       </p>
                     )}
@@ -436,18 +433,18 @@ const Contact = () => {
 
                 {/* Company Field */}
                 <div>
-                  <label htmlFor="company" className="block text-sm font-medium text-secondary-300 mb-2">
+                  <label htmlFor="company" className="block text-xs sm:text-sm font-medium text-secondary-300 mb-2">
                     Company (Optional)
                   </label>
                   <div className="relative">
-                    <Building className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-secondary-400" />
+                    <Building className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 text-secondary-400" />
                     <input
                       type="text"
                       id="company"
                       name="company"
                       value={formData.company}
                       onChange={handleChange}
-                      className="w-full pl-12 pr-4 py-3 bg-secondary-700/50 border border-secondary-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 text-white placeholder-secondary-400"
+                      className="w-full pl-10 sm:pl-12 pr-4 py-2.5 sm:py-3 bg-secondary-700/50 border border-secondary-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 text-white placeholder-secondary-400 text-sm sm:text-base"
                       placeholder="Enter your company name"
                     />
                   </div>
@@ -455,26 +452,26 @@ const Contact = () => {
 
                 {/* Message Field */}
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-secondary-300 mb-2">
+                  <label htmlFor="message" className="block text-xs sm:text-sm font-medium text-secondary-300 mb-2">
                     Message *
                   </label>
                   <div className="relative">
-                    <MessageSquare className="absolute left-3 top-3 w-5 h-5 text-secondary-400" />
+                    <MessageSquare className="absolute left-3 top-3 w-4 h-4 sm:w-5 sm:h-5 text-secondary-400" />
                     <textarea
                       id="message"
                       name="message"
                       rows={5}
                       value={formData.message}
                       onChange={handleChange}
-                      className={`w-full pl-12 pr-4 py-3 bg-secondary-700/50 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 text-white placeholder-secondary-400 resize-none ${
+                      className={`w-full pl-10 sm:pl-12 pr-4 py-2.5 sm:py-3 bg-secondary-700/50 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 text-white placeholder-secondary-400 resize-none text-sm sm:text-base ${
                         errors.message ? 'border-red-500' : 'border-secondary-600'
                       }`}
                       placeholder="Tell us about your project..."
                     />
                   </div>
                   {errors.message && (
-                    <p className="mt-1 text-sm text-red-400 flex items-center space-x-1">
-                      <AlertCircle className="w-4 h-4" />
+                    <p className="mt-1 text-xs sm:text-sm text-red-400 flex items-center space-x-1">
+                      <AlertCircle className="w-3 h-3 sm:w-4 sm:h-4" />
                       <span>{errors.message}</span>
                     </p>
                   )}
@@ -484,7 +481,7 @@ const Contact = () => {
                 <button
                   type="submit"
                   disabled={formStatus === 'loading'}
-                  className={`w-full py-4 px-6 rounded-lg font-semibold text-white transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-secondary-800 ${
+                  className={`w-full py-3 sm:py-4 px-4 sm:px-6 rounded-lg font-semibold text-white transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-secondary-800 text-sm sm:text-base ${
                     formStatus === 'loading'
                       ? 'bg-secondary-600 cursor-not-allowed'
                       : formStatus === 'success'
@@ -495,17 +492,17 @@ const Contact = () => {
                   <div className="flex items-center justify-center space-x-2">
                     {formStatus === 'loading' ? (
                       <>
-                        <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                        <div className="w-4 h-4 sm:w-5 sm:h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
                         <span>Sending...</span>
                       </>
                     ) : formStatus === 'success' ? (
                       <>
-                        <CheckCircle className="w-5 h-5" />
+                        <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5" />
                         <span>Message Sent!</span>
                       </>
                     ) : (
                       <>
-                        <Send className="w-5 h-5" />
+                        <Send className="w-4 h-4 sm:w-5 sm:h-5" />
                         <span>Send Message</span>
                       </>
                     )}

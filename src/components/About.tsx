@@ -21,7 +21,10 @@ const About = () => {
           setIsVisible(true);
         }
       },
-      { threshold: 0.3 }
+      { 
+        threshold: 0.2, 
+        rootMargin: '0px 0px -50px 0px' 
+      }
     );
 
     if (sectionRef.current) {
@@ -58,7 +61,7 @@ const About = () => {
     <section 
       id="about" 
       ref={sectionRef} 
-      className="py-20 relative overflow-hidden"
+      className="py-12 sm:py-16 md:py-20 relative overflow-hidden"
       style={{
         background: `radial-gradient(circle at 50% 50%, rgba(15, 23, 42, 0.3) 0%, rgba(30, 41, 59, 0.2) 25%, transparent 50%)`
       }}
@@ -76,27 +79,27 @@ const About = () => {
         ></div>
       </div>
       
-      <div className="container mx-auto px-4 relative z-10">
-        <div className={`text-center mb-16 transition-all duration-1000 ${
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
+        <div className={`text-center mb-12 sm:mb-16 transition-all duration-1000 ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
             <span className="bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent">
               About EcomToros GmbH
             </span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-          With over a decade of e-commerce experience, we’ve built strong partnerships and connections. 
-          Our focus is to establish your blockchain-based product—such as a hardware wallet—on the German market and grow your brand. 
-          We use both proven marketing strategies and unique, network-driven tactics unavailable elsewhere.
+          <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed px-2">
+            With over a decade of e-commerce experience, we've built strong partnerships and connections. 
+            Our focus is to establish your blockchain-based product—such as a hardware wallet—on the German market and grow your brand. 
+            We use both proven marketing strategies and unique, network-driven tactics unavailable elsewhere.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
           {features.map((feature, index) => (
             <div
               key={feature.title}
-              className={`group p-8 rounded-2xl bg-gradient-to-br from-secondary-800 to-secondary-900 border border-primary-500/20 hover:border-primary-400/50 transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-primary-500/10 ${
+              className={`group p-6 sm:p-8 rounded-xl sm:rounded-2xl bg-gradient-to-br from-secondary-800 to-secondary-900 border border-primary-500/20 hover:border-primary-400/50 transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-primary-500/10 ${
                 isVisible 
                   ? 'translate-y-0 opacity-100' 
                   : 'translate-y-10 opacity-0'
@@ -105,26 +108,29 @@ const About = () => {
                 transitionDelay: isVisible ? `${index * 0.1}s` : '0s' 
               }}
             >
-              <div className="relative mb-6">
-                <feature.icon className="w-12 h-12 text-primary-400 group-hover:text-primary-300 transition-colors duration-300" />
-                <div className="absolute inset-0 w-12 h-12 bg-primary-400 rounded-full blur-xl opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+              <div className="relative mb-4 sm:mb-6">
+                <feature.icon className="w-10 h-10 sm:w-12 sm:h-12 text-primary-400 group-hover:text-primary-300 transition-colors duration-300" />
+                <div className="absolute inset-0 w-10 h-10 sm:w-12 sm:h-12 bg-primary-400 rounded-full blur-xl opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
               </div>
-              <h3 className="text-xl font-semibold mb-4 text-white group-hover:text-primary-300 transition-colors duration-300">
+              <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-white group-hover:text-primary-300 transition-colors duration-300">
                 {feature.title}
               </h3>
-              <p className="text-secondary-400 group-hover:text-secondary-300 transition-colors duration-300">
+              <p className="text-sm sm:text-base text-secondary-400 group-hover:text-secondary-300 transition-colors duration-300 leading-relaxed">
                 {feature.description}
               </p>
             </div>
           ))}
         </div>
 
-        <div className={`mt-16 text-center transition-all duration-1000 delay-500 ${
+        <div className={`mt-12 sm:mt-16 text-center transition-all duration-1000 delay-500 ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
-          <div className="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-primary-600/20 to-secondary-600/20 rounded-full border border-primary-500/30">
-            <span className="w-3 h-3 bg-primary-400 rounded-full animate-pulse"></span>
-            <span className="text-secondary-300">From concept to consumer — powering crypto growth in Germany</span>
+          <div className="inline-flex items-center space-x-2 px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-primary-600/20 to-secondary-600/20 rounded-full border border-primary-500/30">
+            <span className="w-2 h-2 sm:w-3 sm:h-3 bg-primary-400 rounded-full animate-pulse"></span>
+            <span className="text-sm sm:text-base text-secondary-300">
+              <span className="hidden sm:inline">From concept to consumer — powering crypto growth in Germany</span>
+              <span className="sm:hidden">Powering crypto growth in Germany</span>
+            </span>
           </div>
         </div>
       </div>
