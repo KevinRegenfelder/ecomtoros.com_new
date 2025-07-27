@@ -18,6 +18,10 @@ const Contact = () => {
     name: '',
     email: '',
     company: '',
+    telegram: '',
+    subject: '',
+    projectName: '',
+    projectStage: '',
     message: ''
   });
   const [formStatus, setFormStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
@@ -53,6 +57,22 @@ const Contact = () => {
       newErrors.email = 'Please enter a valid email';
     }
 
+    if (!formData.telegram.trim()) {
+      newErrors.telegram = 'Telegram username is required';
+    }
+
+    if (!formData.subject.trim()) {
+      newErrors.subject = 'Subject is required';
+    }
+
+    if (!formData.projectName.trim()) {
+      newErrors.projectName = 'Project name is required';
+    }
+
+    if (!formData.projectStage.trim()) {
+      newErrors.projectStage = 'Project stage is required';
+    }
+
     if (!formData.message.trim()) {
       newErrors.message = 'Message is required';
     } else if (formData.message.length < 10) {
@@ -70,19 +90,41 @@ const Contact = () => {
 
     setFormStatus('loading');
 
-    // Simulate API call
+    try {
+      const formDataToSend = new FormData();
+      formDataToSend.append('form-name', 'contact');
+      formDataToSend.append('name', formData.name);
+      formDataToSend.append('email', formData.email);
+      formDataToSend.append('company', formData.company);
+      formDataToSend.append('telegram', formData.telegram);
+      formDataToSend.append('subject', formData.subject);
+      formDataToSend.append('projectName', formData.projectName);
+      formDataToSend.append('projectStage', formData.projectStage);
+      formDataToSend.append('message', formData.message);
+
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formDataToSend as any).toString()
+      });
+
+      if (response.ok) {
+        setFormStatus('success');
+        setFormData({ name: '', email: '', company: '', telegram: '', subject: '', projectName: '', projectStage: '', message: '' });
+      } else {
+        setFormStatus('error');
+      }
+    } catch (error) {
+      setFormStatus('error');
+    }
+
+    // Reset to idle after 3 seconds
     setTimeout(() => {
-      setFormStatus('success');
-      setFormData({ name: '', email: '', company: '', message: '' });
-      
-      // Reset to idle after 3 seconds
-      setTimeout(() => {
-        setFormStatus('idle');
-      }, 3000);
-    }, 2000);
+      setFormStatus('idle');
+    }, 3000);
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
     
@@ -205,12 +247,24 @@ const Contact = () => {
             <div className={`p-8 rounded-2xl bg-secondary-800/50 backdrop-blur-sm border border-primary-500/20 transition-all duration-1000 delay-200 ${
               isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
             }`}>
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form 
+                name="contact" 
+                method="POST" 
+                data-netlify="true" 
+                netlify-honeypot="bot-field"
+                onSubmit={handleSubmit} 
+                className="space-y-6"
+              >
+                {/* Hidden input für Netlify */}
+                <input type="hidden" name="form-name" value="contact" />
+                <div className="hidden">
+                  <input name="bot-field" />
+                </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {/* Name Field */}
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-secondary-300 mb-2">
-                      Full Name *
+                      Your Name *
                     </label>
                     <div className="relative">
                       <User className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-secondary-400" />
@@ -223,7 +277,7 @@ const Contact = () => {
                         className={`w-full pl-12 pr-4 py-3 bg-secondary-700/50 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 text-white placeholder-secondary-400 ${
                           errors.name ? 'border-red-500' : 'border-secondary-600'
                         }`}
-                        placeholder="Enter your full name"
+                        placeholder="John Doe"
                       />
                     </div>
                     {errors.name && (
@@ -250,13 +304,131 @@ const Contact = () => {
                         className={`w-full pl-12 pr-4 py-3 bg-secondary-700/50 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 text-white placeholder-secondary-400 ${
                           errors.email ? 'border-red-500' : 'border-secondary-600'
                         }`}
-                        placeholder="Enter your email"
+                        placeholder="john@example.com"
                       />
                     </div>
                     {errors.email && (
                       <p className="mt-1 text-sm text-red-400 flex items-center space-x-1">
                         <AlertCircle className="w-4 h-4" />
                         <span>{errors.email}</span>
+                      </p>
+                    )}
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {/* Telegram Field */}
+                  <div>
+                    <label htmlFor="telegram" className="block text-sm font-medium text-secondary-300 mb-2">
+                      Telegram Username *
+                    </label>
+                    <div className="relative">
+                      <MessageSquare className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-secondary-400" />
+                      <input
+                        type="text"
+                        id="telegram"
+                        name="telegram"
+                        value={formData.telegram}
+                        onChange={handleChange}
+                        className={`w-full pl-12 pr-4 py-3 bg-secondary-700/50 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 text-white placeholder-secondary-400 ${
+                          errors.telegram ? 'border-red-500' : 'border-secondary-600'
+                        }`}
+                        placeholder="@johnexample"
+                      />
+                    </div>
+                    {errors.telegram && (
+                      <p className="mt-1 text-sm text-red-400 flex items-center space-x-1">
+                        <AlertCircle className="w-4 h-4" />
+                        <span>{errors.telegram}</span>
+                      </p>
+                    )}
+                  </div>
+
+                  {/* Subject Field */}
+                  <div>
+                    <label htmlFor="subject" className="block text-sm font-medium text-secondary-300 mb-2">
+                      Subject *
+                    </label>
+                    <div className="relative">
+                      <MessageSquare className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-secondary-400" />
+                      <input
+                        type="text"
+                        id="subject"
+                        name="subject"
+                        value={formData.subject}
+                        onChange={handleChange}
+                        className={`w-full pl-12 pr-4 py-3 bg-secondary-700/50 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 text-white placeholder-secondary-400 ${
+                          errors.subject ? 'border-red-500' : 'border-secondary-600'
+                        }`}
+                        placeholder="How can we help?"
+                      />
+                    </div>
+                    {errors.subject && (
+                      <p className="mt-1 text-sm text-red-400 flex items-center space-x-1">
+                        <AlertCircle className="w-4 h-4" />
+                        <span>{errors.subject}</span>
+                      </p>
+                    )}
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {/* Project Name Field */}
+                  <div>
+                    <label htmlFor="projectName" className="block text-sm font-medium text-secondary-300 mb-2">
+                      What is your project's name? *
+                    </label>
+                    <div className="relative">
+                      <Building className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-secondary-400" />
+                      <input
+                        type="text"
+                        id="projectName"
+                        name="projectName"
+                        value={formData.projectName}
+                        onChange={handleChange}
+                        className={`w-full pl-12 pr-4 py-3 bg-secondary-700/50 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 text-white placeholder-secondary-400 ${
+                          errors.projectName ? 'border-red-500' : 'border-secondary-600'
+                        }`}
+                        placeholder="OneKey, Tangem,..."
+                      />
+                    </div>
+                    {errors.projectName && (
+                      <p className="mt-1 text-sm text-red-400 flex items-center space-x-1">
+                        <AlertCircle className="w-4 h-4" />
+                        <span>{errors.projectName}</span>
+                      </p>
+                    )}
+                  </div>
+
+                  {/* Project Stage Field */}
+                  <div>
+                    <label htmlFor="projectStage" className="block text-sm font-medium text-secondary-300 mb-2">
+                      What is your project's current stage? *
+                    </label>
+                    <div className="relative">
+                      <Building className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-secondary-400" />
+                      <select
+                        id="projectStage"
+                        name="projectStage"
+                        value={formData.projectStage}
+                        onChange={handleChange}
+                        className={`w-full pl-12 pr-4 py-3 bg-secondary-700/50 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 text-white ${
+                          errors.projectStage ? 'border-red-500' : 'border-secondary-600'
+                        }`}
+                      >
+                        <option value="" className="bg-secondary-800">Select project stage...</option>
+                        <option value="idea" className="bg-secondary-800">Idea/Concept</option>
+                        <option value="development" className="bg-secondary-800">In Development</option>
+                        <option value="testing" className="bg-secondary-800">Testing Phase</option>
+                        <option value="launch" className="bg-secondary-800">Ready for Launch</option>
+                        <option value="live" className="bg-secondary-800">Live/Active</option>
+                        <option value="scaling" className="bg-secondary-800">Scaling Phase</option>
+                      </select>
+                    </div>
+                    {errors.projectStage && (
+                      <p className="mt-1 text-sm text-red-400 flex items-center space-x-1">
+                        <AlertCircle className="w-4 h-4" />
+                        <span>{errors.projectStage}</span>
                       </p>
                     )}
                   </div>

@@ -92,8 +92,8 @@ const Services = () => {
         <div 
           className="absolute inset-0 bg-grid-pattern animate-pulse"
           style={{
-            backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.2) 1px, transparent 1px), 
-                             linear-gradient(90deg, rgba(255, 255, 255, 0.2) 1px, transparent 1px)`,
+            backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.5) 1px, transparent 1px), 
+                             linear-gradient(90deg, rgba(255, 255, 255, 0.5) 1px, transparent 1px)`,
             backgroundSize: '5px 5px'
           }}
         ></div>
@@ -173,18 +173,7 @@ const Services = () => {
           ))}
         </div>
 
-        {/* CTA Section */}
-        <div className={`mt-16 text-center transition-all duration-1000 delay-800 ${
-          isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-        }`}>
-          <div className="inline-block p-8 rounded-2xl bg-gradient-to-r from-primary-600/20 to-secondary-600/20 backdrop-blur-sm border border-primary-500/30">
-            <h3 className="text-2xl font-bold mb-4 text-white">Ready to Start Your Web3 Journey?</h3>
-            <p className="text-secondary-300 mb-6">Let's discuss how we can help you build the future of decentralized technology.</p>
-            <button className="px-8 py-4 bg-gradient-to-r from-primary-600 to-secondary-600 rounded-full hover:from-primary-700 hover:to-secondary-700 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-primary-500/25 font-semibold">
-              Get Started Today
-            </button>
-          </div>
-        </div>
+     
       </div>
     </section>
   );

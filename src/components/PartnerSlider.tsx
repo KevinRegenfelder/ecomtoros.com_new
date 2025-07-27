@@ -67,8 +67,8 @@ const PartnerSlider = () => {
         <div 
           className="absolute inset-0 bg-grid-pattern animate-pulse"
           style={{
-            backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.2) 1px, transparent 1px), 
-                             linear-gradient(90deg, rgba(255, 255, 255, 0.2) 1px, transparent 1px)`,
+            backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.5) 1px, transparent 1px), 
+                             linear-gradient(90deg, rgba(255, 255, 255, 0.5) 1px, transparent 1px)`,
             backgroundSize: '5px 5px'
           }}
         ></div>
@@ -82,7 +82,7 @@ const PartnerSlider = () => {
             </span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-          Years of experience and a strong network allow us to market your products through top German distribution channels.
+          From marketplaces and marketing to fulfillment — our partner network delivers an all-in-one solution tailored for crypto hardware in the German market.
           </p>
         </div>
 
@@ -109,6 +109,16 @@ const PartnerSlider = () => {
           </div>
         </div>
       </div>
+         {/* CTA Section */}
+<div className={`mt-16 text-center transition-all duration-1000 delay-800`}>
+  <div className="inline-block p-8 rounded-2xl bg-gradient-to-r from-primary-600/20 to-secondary-600/20 backdrop-blur-sm border border-primary-500/30">
+    <h3 className="text-2xl font-bold mb-4 text-white">Ready to Launch in the German Market?</h3>
+    <p className="text-secondary-300 mb-6">Let’s bring your crypto hardware or blockchain brand to life — with strategy, speed, and local know-how.</p>
+    <button className="px-8 py-4 bg-gradient-to-r from-primary-600 to-secondary-600 rounded-full hover:from-primary-700 hover:to-secondary-700 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-primary-500/25 font-semibold">
+      <a href="#contact" className="text-white">Let's Talk Growth</a>
+    </button>
+  </div>
+</div>
     </section>
   );
 };

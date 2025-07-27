@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { TrendingUp, Users, Code, Award } from 'lucide-react';
+import { TrendingUp, Users, Package, Building, Rocket } from 'lucide-react';
 
 const Stats = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -12,10 +12,10 @@ const Stats = () => {
   });
 
   const finalValues = {
-    projects: 150,
-    clients: 50,
-    lines: 100000,
-    awards: 25
+    projects: 2500000,
+    clients: 60,
+    lines: 670000,
+    awards: 10
   };
 
   useEffect(() => {
@@ -38,8 +38,8 @@ const Stats = () => {
   useEffect(() => {
     if (isVisible) {
       const animateNumbers = () => {
-        const duration = 2000; // 2 seconds
-        const steps = 60; // 60 FPS
+        const duration = 3000; // 3 seconds for smoother animation
+        const steps = 120; // 120 FPS for smoother counting
         const stepDuration = duration / steps;
 
         let currentStep = 0;
@@ -47,7 +47,7 @@ const Stats = () => {
         const timer = setInterval(() => {
           currentStep++;
           const progress = currentStep / steps;
-          const easeOut = 1 - Math.pow(1 - progress, 3); // Easing function
+          const easeOut = 1 - Math.pow(1 - progress, 2); // Smoother easing
 
           setAnimatedValues({
             projects: Math.floor(finalValues.projects * easeOut),
@@ -70,7 +70,13 @@ const Stats = () => {
     }
   }, [isVisible]);
 
-  const formatNumber = (num: number, suffix: string = '') => {
+  const formatNumber = (num: number, suffix: string = '', isBudget: boolean = false) => {
+    if (isBudget && num >= 1000000) {
+      return `€${(num / 1000000).toFixed(1)}M+`;
+    }
+    if (num >= 1000000) {
+      return `${(num / 1000000).toFixed(0)}M${suffix}`;
+    }
     if (num >= 100000) {
       return `${(num / 1000).toFixed(0)}K${suffix}`;
     }
@@ -78,38 +84,38 @@ const Stats = () => {
   };
 
   const stats = [
-    {
-      icon: Code,
-      value: animatedValues.projects,
-      suffix: '+',
-      label: 'Projects Completed',
-      description: 'Successful blockchain implementations',
-      color: 'from-primary-500 to-secondary-500'
-    },
-    {
-      icon: Users,
-      value: animatedValues.clients,
-      suffix: '+',
-      label: 'Happy Clients',
-      description: 'Satisfied customers worldwide',
-      color: 'from-secondary-500 to-primary-400'
-    },
-    {
-      icon: TrendingUp,
-      value: animatedValues.lines,
-      suffix: '+',
-      label: 'Lines of Code',
-      description: 'Written with precision and care',
-      color: 'from-primary-400 to-secondary-400'
-    },
-    {
-      icon: Award,
-      value: animatedValues.awards,
-      suffix: '+',
-      label: 'Awards Won',
-      description: 'Recognition for excellence',
-      color: 'from-secondary-400 to-primary-300'
-    }
+{
+  icon: TrendingUp,
+  value: animatedValues.projects,
+  suffix: '',
+  label: 'Managed Budget',
+  description: 'Campaigns across the DACH Region Market',
+  color: 'from-primary-500 to-secondary-500'
+},
+{
+  icon: Users,
+  value: animatedValues.clients,
+  suffix: '+',
+  label: 'Happy Clients',
+  description: 'Trusted by satisfied partners across the DACH region',
+  color: 'from-secondary-500 to-primary-400'
+},
+{
+  icon: Package,
+  value: animatedValues.lines,
+  suffix: '+',
+  label: 'Products Fulfilled',
+  description: 'Delivered via our in-house fulfillment & logistics network',
+  color: 'from-primary-400 to-secondary-400'
+},
+{
+  icon: Building,
+  value: animatedValues.awards,
+  suffix: '+',
+  label: 'Team Members',
+  description: 'Cross-functional experts — from engineering to execution',
+  color: 'from-secondary-400 to-primary-300'
+}
   ];
 
   return (
@@ -138,13 +144,13 @@ const Stats = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent">
-              We are pioneers
+              We are pioneers 
             </span>
             <br />
-            <span className="text-white">in the Web3 space</span>
+            <span className="text-white">in the Crypto Hardware space</span>
           </h2>
           <p className="text-xl text-secondary-300 max-w-3xl mx-auto leading-relaxed">
-            We are pioneers in the Web3 space, dedicated to building the decentralized future. Our mission is to make blockchain technology accessible and powerful for everyone.
+          We are specialists in crypto hardware and Web3 go-to-market. Our mission is to bring blockchain products to life — accessible, localized, and built to grow in the German-speaking world.
           </p>
         </div>
 
@@ -174,7 +180,7 @@ const Stats = () => {
               {/* Animated Number */}
               <div className="mb-4">
                 <span className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white to-secondary-300 bg-clip-text text-transparent">
-                  {formatNumber(stat.value, stat.suffix)}
+                  {formatNumber(stat.value, stat.suffix, stat.label === 'Managed Budget')}
                 </span>
               </div>
 
@@ -203,13 +209,15 @@ const Stats = () => {
               {/* Text Section - Left */}
               <div className="flex-1 text-center lg:text-left">
                 <h3 className="text-2xl md:text-3xl font-bold mb-4">
-                  <span className="bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent">
-                    From Germany to Austria
+                  <span className="text-white">
+                    From <span className="bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent">Germany</span> to <span className="bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent">Austria</span>
                   </span>
                   <br />
-                  <span className="text-white">all the way to Switzerland</span>
+                  <span className="text-white">
+                    all the way to <span className="bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent">Switzerland</span>
+                  </span>
                   <br />
-                  <span className="text-primary-300 text-xl">we got the whole DACH section for you!</span>
+                  <span className="bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent text-xl">we got the whole DACH section for you!</span>
                 </h3>
                 <p className="text-lg text-secondary-300 mt-4">
                   Strong connections across the German-speaking region with strategic positioning in all three countries.
@@ -329,14 +337,15 @@ const Stats = () => {
           </div>
         </div>
                 {/* Achievement Badge */}
+   {/* Achievement Badge */}
                 <div className={`mt-16 flex justify-center transition-all duration-1000 delay-500 ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
           <div className="inline-flex items-center space-x-3 px-8 py-4 bg-gradient-to-r from-primary-600/20 to-secondary-600/20 rounded-full border border-primary-500/30 backdrop-blur-sm">
-            <Award className="w-6 h-6 text-primary-400" />
-            <span className="text-white font-semibold">Trusted by industry leaders</span>
+            <Rocket className="w-6 h-6 text-primary-400" />
+            <span className="text-white font-semibold">We’ll help you grow your brand across the DACH region.</span>
             <div className="flex space-x-1">
-              {[...Array(5)].map((_, i) => (
+              {[...Array(3)].map((_, i) => (
                 <div
                   key={i}
                   className="w-2 h-2 bg-primary-400 rounded-full animate-pulse"

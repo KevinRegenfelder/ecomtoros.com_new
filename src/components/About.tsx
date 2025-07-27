@@ -1,5 +1,14 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Users, Trophy, Globe, Code } from 'lucide-react';
+import { 
+  TrendingUp, 
+  Users, 
+  Network, 
+  Rocket,
+  MapPin,
+  Target,
+  Zap,
+  Shield
+} from 'lucide-react';
 
 const About = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -24,24 +33,24 @@ const About = () => {
 
   const features = [
     {
-      icon: Code,
-      title: 'Advanced Development',
-      description: 'Cutting-edge blockchain development with the latest technologies and frameworks.'
+      icon: TrendingUp,
+      title: 'Local Market Experts',
+      description: 'Over a decade of e-commerce experience in DACH — enabling smooth entry, growth, and brand localization.'
     },
     {
       icon: Users,
-      title: 'Expert Team',
-      description: 'Our team of blockchain experts brings years of experience in Web3 development.'
+      title: 'The Team',
+      description: '10+ specialists focused on launching crypto hardware — tailored for the German market and consumers.'
     },
     {
-      icon: Trophy,
-      title: 'Proven Results',
-      description: 'Successful delivery of 100+ blockchain projects across various industries.'
+      icon: Network,
+      title: 'Integrated Growth Network',
+      description: 'From fulfillment to marketing — our network covers all steps to reach, convert, and grow your brand.'
     },
     {
-      icon: Globe,
-      title: 'Global Reach',
-      description: 'Serving clients worldwide with decentralized solutions that scale globally.'
+      icon: Rocket,
+      title: 'Full Go-to-Market Support',
+      description: 'We deliver a complete launch setup — from strategy to execution — to build lasting brands in Germany.'
     }
   ];
 
@@ -73,12 +82,13 @@ const About = () => {
         }`}>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent">
-              About CrypticWeb3
+              About EcomToros GmbH
             </span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            We are pioneers in the Web3 space, dedicated to building the decentralized future. 
-            Our mission is to make blockchain technology accessible and powerful for everyone.
+          With over a decade of e-commerce experience, we’ve built strong partnerships and connections. 
+          Our focus is to establish your blockchain-based product—such as a hardware wallet—on the German market and grow your brand. 
+          We use both proven marketing strategies and unique, network-driven tactics unavailable elsewhere.
           </p>
         </div>
 
@@ -114,7 +124,7 @@ const About = () => {
         }`}>
           <div className="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-primary-600/20 to-secondary-600/20 rounded-full border border-primary-500/30">
             <span className="w-3 h-3 bg-primary-400 rounded-full animate-pulse"></span>
-            <span className="text-secondary-300">Building the decentralized future, one block at a time</span>
+            <span className="text-secondary-300">From concept to consumer — powering crypto growth in Germany</span>
           </div>
         </div>
       </div>
