@@ -253,29 +253,6 @@ const Contact = () => {
               isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
             }`}>
               
-              {/* Hidden HTML form for Netlify */}
-              <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" className="hidden">
-                <input type="hidden" name="form-name" value="contact" />
-                <div className="hidden">
-                  <input name="bot-field" />
-                </div>
-                <input name="name" type="text" />
-                <input name="email" type="email" />
-                <input name="company" type="text" />
-                <input name="telegram" type="text" />
-                <input name="subject" type="text" />
-                <input name="projectName" type="text" />
-                <select name="projectStage">
-                  <option value="idea">Idea/Concept</option>
-                  <option value="development">In Development</option>
-                  <option value="testing">Testing Phase</option>
-                  <option value="launch">Ready for Launch</option>
-                  <option value="live">Live/Active</option>
-                  <option value="scaling">Scaling Phase</option>
-                </select>
-                <textarea name="message"></textarea>
-              </form>
-
               {/* Visible React form */}
               <form 
                 name="contact" 

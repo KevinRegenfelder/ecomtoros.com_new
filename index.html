@@ -11,6 +11,30 @@
   </head>
   <body>
     <div id="root"></div>
+    
+    <!-- Hidden form for Netlify -->
+    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" style="display: none;">
+      <input type="hidden" name="form-name" value="contact" />
+      <div style="display: none;">
+        <input name="bot-field" />
+      </div>
+      <input name="name" type="text" />
+      <input name="email" type="email" />
+      <input name="company" type="text" />
+      <input name="telegram" type="text" />
+      <input name="subject" type="text" />
+      <input name="projectName" type="text" />
+      <select name="projectStage">
+        <option value="idea">Idea/Concept</option>
+        <option value="development">In Development</option>
+        <option value="testing">Testing Phase</option>
+        <option value="launch">Ready for Launch</option>
+        <option value="live">Live/Active</option>
+        <option value="scaling">Scaling Phase</option>
+      </select>
+      <textarea name="message"></textarea>
+    </form>
+    
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
