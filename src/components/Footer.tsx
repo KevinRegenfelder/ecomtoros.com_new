@@ -172,10 +172,10 @@ const Footer = () => {
         {/* Bottom Section */}
         <div className="py-4 sm:py-6 border-t border-primary-500/20">
           <div className="flex flex-col md:flex-row items-center justify-between space-y-3 sm:space-y-4 md:space-y-0">
-            <div className="flex items-center space-x-2 text-xs sm:text-sm text-secondary-400">
+            <div className="flex items-center space-x-2 text-[8px] sm:text-sm text-secondary-400">
               <span>© 2025 EcomToros GmbH. Made with</span>
               <Heart className="w-3 h-3 sm:w-4 sm:h-4 text-primary-400 animate-pulse" />
-              <span>by the EcomToros Team</span>
+              <span>by the EcomToros GmbH Team</span>
             </div>
             
             <div className="flex items-center">

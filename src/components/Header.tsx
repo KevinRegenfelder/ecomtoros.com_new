@@ -50,13 +50,8 @@ const Header = () => {
             {/* Logo */}
             <a href="#home" className="flex items-center space-x-2 sm:space-x-3 group cursor-pointer select-none pl-0">
               <div className="relative">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-primary-400 to-secondary-500 rounded-xl sm:rounded-2xl flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-primary-500/20">
-                  {/* Simples, minimalistisches Icon: weißer Kreis als Outline */}
-                  <svg viewBox="0 0 32 32" width="24" height="24" className="sm:w-7 sm:h-7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="16" cy="16" r="10" stroke="#fff" strokeWidth="3" />
-                  </svg>
-                </div>
-                <div className="absolute inset-0 w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-primary-400 to-secondary-500 rounded-xl sm:rounded-2xl blur-2xl opacity-0 group-hover:opacity-40 transition-opacity duration-300"></div>
+                <Zap className="w-6 h-6 sm:w-8 sm:h-8 text-primary-400 animate-pulse" />
+                <div className="absolute inset-0 w-6 h-6 sm:w-8 sm:h-8 bg-primary-400 rounded-full blur-xl opacity-20 animate-ping"></div>
               </div>
               <div className="flex flex-col">
                 <span className="text-lg sm:text-xl md:text-2xl font-extrabold bg-gradient-to-r from-primary-400 via-secondary-400 to-primary-300 bg-clip-text text-transparent tracking-tight">

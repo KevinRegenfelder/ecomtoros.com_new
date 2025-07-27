@@ -47,6 +47,31 @@ const PartnerSlider = () => {
       name: 'Conrad',
       logo: '/media/logos/conrad.png',
       width: 'w-24 sm:w-32'
+    },
+    {
+      name: 'Amazon',
+      logo: '/media/logos/amazon.png',
+      width: 'w-24 sm:w-32'
+    },
+    {
+      name: 'DHL',
+      logo: '/media/logos/dhl.png',
+      width: 'w-24 sm:w-32'
+    },
+    {
+      name: 'gls',
+      logo: '/media/logos/gls.png',
+      width: 'w-24 sm:w-32'
+    },
+    {
+      name: 'ebay',
+      logo: '/media/logos/ebay.png',
+      width: 'w-24 sm:w-32'
+    },
+    {
+      name: 'tangem',
+      logo: '/media/logos/tangem.png',
+      width: 'w-24 sm:w-32'
     }
   ];
 
@@ -106,7 +131,7 @@ const PartnerSlider = () => {
         ></div>
       </div>
       
-      <div className="container mx-auto px-4 sm:px-6 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10 overflow-hidden">
         <div className="text-center mb-8 sm:mb-12">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
             <span className="bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent">
@@ -119,16 +144,16 @@ const PartnerSlider = () => {
         </div>
 
         {/* Mobile Slider - 3 Rows */}
-        <div className="block lg:hidden space-y-4 sm:space-y-6">
+        <div className="block lg:hidden space-y-4 sm:space-y-6 pb-8">
           {/* Mobile Row 1 */}
-          <div className="relative overflow-hidden">
+          <div className="relative">
             <div className="flex animate-slide-infinite" style={{ animationDuration: '30s' }}>
               {mobileRows[0].map((partner, index) => (
                 <div
                   key={`mobile-1-${partner.name}-${index}`}
                   className="flex-shrink-0 mx-2 sm:mx-4 group"
                 >
-                  <div className="flex items-center justify-center h-16 sm:h-20 w-24 sm:w-28 p-2 sm:p-3 rounded-lg bg-gray-800/50 backdrop-blur-sm border border-purple-500/10 hover:border-purple-500/30 transition-all duration-300 group-hover:transform group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-purple-500/20">
+                  <div className="flex items-center justify-center h-16 sm:h-20 w-24 sm:w-28 p-2 sm:p-3 rounded-lg bg-secondary-800/50 backdrop-blur-sm border border-primary-500/10 hover:border-primary-500/30 transition-all duration-300 group-hover:transform group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-primary-500/20">
                     <img
                       src={partner.logo}
                       alt={`${partner.name} logo`}
@@ -142,7 +167,7 @@ const PartnerSlider = () => {
           </div>
 
           {/* Mobile Row 2 */}
-          <div className="relative overflow-hidden">
+          <div className="relative">
             <div className="flex animate-slide-infinite" style={{ 
               animationDuration: '25s',
               transform: 'translateX(-20%)'
@@ -152,7 +177,7 @@ const PartnerSlider = () => {
                   key={`mobile-2-${partner.name}-${index}`}
                   className="flex-shrink-0 mx-2 sm:mx-4 group"
                 >
-                  <div className="flex items-center justify-center h-16 sm:h-20 w-24 sm:w-28 p-2 sm:p-3 rounded-lg bg-gray-800/50 backdrop-blur-sm border border-purple-500/10 hover:border-purple-500/30 transition-all duration-300 group-hover:transform group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-purple-500/20">
+                  <div className="flex items-center justify-center h-16 sm:h-20 w-24 sm:w-28 p-2 sm:p-3 rounded-lg bg-secondary-800/50 backdrop-blur-sm border border-primary-500/10 hover:border-primary-500/30 transition-all duration-300 group-hover:transform group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-primary-500/20">
                     <img
                       src={partner.logo}
                       alt={`${partner.name} logo`}
@@ -166,7 +191,7 @@ const PartnerSlider = () => {
           </div>
 
           {/* Mobile Row 3 */}
-          <div className="relative overflow-hidden">
+          <div className="relative">
             <div className="flex animate-slide-infinite" style={{ 
               animationDuration: '35s',
               transform: 'translateX(-10%)'
@@ -176,7 +201,7 @@ const PartnerSlider = () => {
                   key={`mobile-3-${partner.name}-${index}`}
                   className="flex-shrink-0 mx-2 sm:mx-4 group"
                 >
-                  <div className="flex items-center justify-center h-16 sm:h-20 w-24 sm:w-28 p-2 sm:p-3 rounded-lg bg-gray-800/50 backdrop-blur-sm border border-purple-500/10 hover:border-purple-500/30 transition-all duration-300 group-hover:transform group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-purple-500/20">
+                  <div className="flex items-center justify-center h-16 sm:h-20 w-24 sm:w-28 p-2 sm:p-3 rounded-lg bg-secondary-800/50 backdrop-blur-sm border border-primary-500/10 hover:border-primary-500/30 transition-all duration-300 group-hover:transform group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-primary-500/20">
                     <img
                       src={partner.logo}
                       alt={`${partner.name} logo`}
@@ -191,16 +216,16 @@ const PartnerSlider = () => {
         </div>
 
         {/* Desktop Slider - 2 Rows */}
-        <div className="hidden lg:block space-y-6">
+        <div className="hidden lg:block space-y-6 pb-12">
           {/* Desktop Row 1 */}
-          <div className="relative overflow-hidden">
+          <div className="relative">
             <div className="flex animate-slide-infinite" style={{ animationDuration: '40s' }}>
               {desktopRows[0].map((partner, index) => (
                 <div
                   key={`desktop-1-${partner.name}-${index}`}
                   className="flex-shrink-0 mx-6 group"
                 >
-                  <div className="flex items-center justify-center h-24 w-36 p-4 rounded-xl bg-gray-800/50 backdrop-blur-sm border border-purple-500/10 hover:border-purple-500/30 transition-all duration-300 group-hover:transform group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-purple-500/20">
+                  <div className="flex items-center justify-center h-24 w-36 p-4 rounded-xl bg-secondary-800/50 backdrop-blur-sm border border-primary-500/10 hover:border-primary-500/30 transition-all duration-300 group-hover:transform group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-primary-500/20">
                     <img
                       src={partner.logo}
                       alt={`${partner.name} logo`}
@@ -214,7 +239,7 @@ const PartnerSlider = () => {
           </div>
 
           {/* Desktop Row 2 */}
-          <div className="relative overflow-hidden">
+          <div className="relative">
             <div className="flex animate-slide-infinite" style={{ 
               animationDuration: '35s',
               transform: 'translateX(-30%)'
@@ -224,7 +249,7 @@ const PartnerSlider = () => {
                   key={`desktop-2-${partner.name}-${index}`}
                   className="flex-shrink-0 mx-6 group"
                 >
-                  <div className="flex items-center justify-center h-24 w-36 p-4 rounded-xl bg-gray-800/50 backdrop-blur-sm border border-purple-500/10 hover:border-purple-500/30 transition-all duration-300 group-hover:transform group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-purple-500/20">
+                  <div className="flex items-center justify-center h-24 w-36 p-4 rounded-xl bg-secondary-800/50 backdrop-blur-sm border border-primary-500/10 hover:border-primary-500/30 transition-all duration-300 group-hover:transform group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-primary-500/20">
                     <img
                       src={partner.logo}
                       alt={`${partner.name} logo`}
@@ -240,7 +265,7 @@ const PartnerSlider = () => {
       </div>
       
       {/* CTA Section */}
-      <div className="mt-12 sm:mt-16 text-center px-4 sm:px-6">
+      <div className="mt-16 sm:mt-20 text-center px-4 sm:px-6">
         <div className="inline-block p-6 sm:p-8 rounded-xl sm:rounded-2xl bg-gradient-to-r from-primary-600/20 to-secondary-600/20 backdrop-blur-sm border border-primary-500/30">
           <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-white">Ready to Launch in the German Market?</h3>
           <p className="text-sm sm:text-base text-secondary-300 mb-4 sm:mb-6">Let's bring your crypto hardware or blockchain brand to life — with strategy, speed, and local know-how.</p>
