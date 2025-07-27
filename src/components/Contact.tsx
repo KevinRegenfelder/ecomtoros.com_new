@@ -257,8 +257,7 @@ const Contact = () => {
               <form 
                 name="contact" 
                 method="POST" 
-                data-netlify="true" 
-                netlify-honeypot="bot-field"
+                data-netlify="true"
                 action="/success.html"
                 onSubmit={handleSubmit} 
                 className="space-y-4 sm:space-y-6"
