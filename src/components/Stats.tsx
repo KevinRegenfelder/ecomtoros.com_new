@@ -232,7 +232,7 @@ const Stats = () => {
               <div className="flex-1 w-full max-w-lg lg:max-w-xl">
                 <div className="w-full overflow-hidden relative">
                   <img 
-                    src="/src/media/map/map.png" 
+                    src="/media/map/map.png" 
                     alt="DACH Region Map" 
                     className="w-full h-auto object-cover rounded-lg sm:rounded-xl"
                   />

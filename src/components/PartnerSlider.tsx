@@ -5,47 +5,47 @@ const PartnerSlider = () => {
   const partners = [
     {
       name: 'Fairfillment',
-      logo: '/src/media/logos/fairfillment.png',
+      logo: '/media/logos/fairfillment.png',
       width: 'w-24 sm:w-32'
     },
     {
       name: 'Hardware-Wallet.Shop',
-      logo: '/src/media/logos/hws.png',
+      logo: '/media/logos/hws.png',
       width: 'w-24 sm:w-32'
     },
     {
       name: 'Media Markt & Saturn',
-      logo: '/src/media/logos/mediamarkt_saturn.png',
+      logo: '/media/logos/mediamarkt_saturn.png',
       width: 'w-24 sm:w-32'
     },
     {
       name: 'CHIP',
-      logo: '/src/media/logos/chip.png',
+      logo: '/media/logos/chip.png',
       width: 'w-24 sm:w-32'
     },
     {
       name: 'OneKey',
-      logo: '/src/media/logos/onekey.png',
+      logo: '/media/logos/onekey.png',
       width: 'w-24 sm:w-32'
     },
     {
       name: 'Cyberport',
-      logo: '/src/media/logos/cyberport.png',
+      logo: '/media/logos/cyberport.png',
       width: 'w-24 sm:w-32'
     },
     {
       name: 'Idealo',
-      logo: '/src/media/logos/idealo.png',
+      logo: '/media/logos/idealo.png',
       width: 'w-24 sm:w-32'
     },
     {
       name: 'Billiger.de',
-      logo: '/src/media/logos/billiger_de.png',
+      logo: '/media/logos/billiger_de.png',
       width: 'w-24 sm:w-32'
     },
     {
       name: 'Conrad',
-      logo: '/src/media/logos/conrad.png',
+      logo: '/media/logos/conrad.png',
       width: 'w-24 sm:w-32'
     }
   ];
