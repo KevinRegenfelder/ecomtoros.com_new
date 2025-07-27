@@ -8,7 +8,11 @@ import {
   AlertCircle,
   MessageSquare,
   User,
-  Building
+  Building,
+  Hash,
+  FileText,
+  Rocket,
+  ChevronDown
 } from 'lucide-react';
 
 const Contact = () => {
@@ -114,6 +118,10 @@ const Contact = () => {
       if (response.ok) {
         setFormStatus('success');
         setFormData({ name: '', email: '', company: '', telegram: '', subject: '', projectName: '', projectStage: '', message: '' });
+        // Show success message for 5 seconds
+        setTimeout(() => {
+          setFormStatus('idle');
+        }, 5000);
       } else {
         setFormStatus('error');
       }
@@ -244,11 +252,37 @@ const Contact = () => {
             <div className={`p-6 sm:p-8 rounded-xl sm:rounded-2xl bg-secondary-800/50 backdrop-blur-sm border border-primary-500/20 transition-all duration-1000 delay-200 ${
               isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
             }`}>
+              
+              {/* Hidden HTML form for Netlify */}
+              <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" className="hidden">
+                <input type="hidden" name="form-name" value="contact" />
+                <div className="hidden">
+                  <input name="bot-field" />
+                </div>
+                <input name="name" type="text" />
+                <input name="email" type="email" />
+                <input name="company" type="text" />
+                <input name="telegram" type="text" />
+                <input name="subject" type="text" />
+                <input name="projectName" type="text" />
+                <select name="projectStage">
+                  <option value="idea">Idea/Concept</option>
+                  <option value="development">In Development</option>
+                  <option value="testing">Testing Phase</option>
+                  <option value="launch">Ready for Launch</option>
+                  <option value="live">Live/Active</option>
+                  <option value="scaling">Scaling Phase</option>
+                </select>
+                <textarea name="message"></textarea>
+              </form>
+
+              {/* Visible React form */}
               <form 
                 name="contact" 
                 method="POST" 
                 data-netlify="true" 
                 netlify-honeypot="bot-field"
+                action="/success.html"
                 onSubmit={handleSubmit} 
                 className="space-y-4 sm:space-y-6"
               >
@@ -320,7 +354,7 @@ const Contact = () => {
                       Telegram Username *
                     </label>
                     <div className="relative">
-                      <MessageSquare className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 text-secondary-400" />
+                      <Hash className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 text-secondary-400" />
                       <input
                         type="text"
                         id="telegram"
@@ -347,7 +381,7 @@ const Contact = () => {
                       Subject *
                     </label>
                     <div className="relative">
-                      <MessageSquare className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 text-secondary-400" />
+                      <FileText className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 text-secondary-400" />
                       <input
                         type="text"
                         id="subject"
@@ -376,7 +410,7 @@ const Contact = () => {
                       What is your project's name? *
                     </label>
                     <div className="relative">
-                      <Building className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 text-secondary-400" />
+                      <Rocket className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 text-secondary-400" />
                       <input
                         type="text"
                         id="projectName"
@@ -403,13 +437,13 @@ const Contact = () => {
                       What is your project's current stage? *
                     </label>
                     <div className="relative">
-                      <Building className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 text-secondary-400" />
+                      <Rocket className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 text-secondary-400" />
                       <select
                         id="projectStage"
                         name="projectStage"
                         value={formData.projectStage}
                         onChange={handleChange}
-                        className={`w-full pl-10 sm:pl-12 pr-4 py-2.5 sm:py-3 bg-secondary-700/50 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 text-white text-sm sm:text-base ${
+                        className={`w-full pl-10 sm:pl-12 pr-12 py-2.5 sm:py-3 bg-secondary-700/50 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 text-white text-sm sm:text-base appearance-none ${
                           errors.projectStage ? 'border-red-500' : 'border-secondary-600'
                         }`}
                       >
@@ -421,6 +455,7 @@ const Contact = () => {
                         <option value="live" className="bg-secondary-800">Live/Active</option>
                         <option value="scaling" className="bg-secondary-800">Scaling Phase</option>
                       </select>
+                      <ChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 text-secondary-400 pointer-events-none" />
                     </div>
                     {errors.projectStage && (
                       <p className="mt-1 text-xs sm:text-sm text-red-400 flex items-center space-x-1">
@@ -498,7 +533,7 @@ const Contact = () => {
                     ) : formStatus === 'success' ? (
                       <>
                         <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5" />
-                        <span>Message Sent!</span>
+                        <span>We'll review your project!</span>
                       </>
                     ) : (
                       <>

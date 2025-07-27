@@ -117,8 +117,8 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="absolute -bottom-16 sm:-bottom-20 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <ArrowDown className="w-6 h-6 sm:w-8 sm:h-8 text-primary-400" />
+        <div className="mt-8 sm:absolute sm:-bottom-20 sm:left-1/2 sm:transform sm:-translate-x-1/2 animate-bounce z-20">
+          <ArrowDown className="w-6 h-6 sm:w-8 sm:h-8 text-primary-400 mx-auto" />
         </div>
       </div>
     </section>

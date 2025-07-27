@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Sent - EcomToros GmbH</title>
+    <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNjFBNUY4IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHBvbHlnb24gcG9pbnRzPSIxMywyIDMsMTQgMTIsMTQgMTEsMjIgMjEsMTAgMTIsMTAgMTMsMiIvPjwvc3ZnPg==" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        
+        .container {
+            text-align: center;
+            max-width: 600px;
+            padding: 2rem;
+        }
+        
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #61A5F8, #8B5CF6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .success-icon svg {
+            width: 40px;
+            height: 40px;
+            color: white;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #61A5F8, #8B5CF6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .message {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            color: #cbd5e1;
+        }
+        
+        .highlight {
+            color: #61A5F8;
+            font-weight: 600;
+        }
+        
+        .back-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #61A5F8, #8B5CF6);
+            color: white;
+            text-decoration: none;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(97, 165, 248, 0.3);
+        }
+        
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(97, 165, 248, 0.4);
+        }
+        
+        .logo {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+        
+        .logo svg {
+            width: 24px;
+            height: 24px;
+            color: #61A5F8;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .message {
+                font-size: 1rem;
+            }
+            
+            .logo {
+                position: relative;
+                top: auto;
+                left: auto;
+                margin-bottom: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="13,2 3,14 12,14 11,22 21,10 12,10 13,2"/>
+        </svg>
+        EcomToros GmbH
+    </div>
+    
+    <div class="container">
+        <div class="success-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                <polyline points="22,4 12,14.01 9,11.01"/>
+            </svg>
+        </div>
+        
+        <h1>Message Sent Successfully!</h1>
+        
+        <div class="message">
+            Thank you for reaching out to us! We've received your message and will review your project details carefully.
+            <br><br>
+            <span class="highlight">If we find your project exciting and aligned with our expertise, we'll get back to you within 24-48 hours.</span>
+            <br><br>
+            In the meantime, feel free to explore our services and partner network.
+        </div>
+        
+        <a href="/" class="back-button">Back to Homepage</a>
+    </div>
+</body>
+</html> 
