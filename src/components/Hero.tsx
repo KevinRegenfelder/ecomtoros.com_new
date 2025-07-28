@@ -76,11 +76,11 @@ const Hero = () => {
               Welcome to the
             </span>
             <br />
-            <span className="text-xl sm:text-2xl md:text-3xl lg:text-5xl text-white">German Blockchain Market</span>
+            <span className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white">German speaking Blockchain Market</span>
           </h1>
           
           <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed px-2">
-            Unlock the full potential of the German blockchain market with deep expertise in Europe's largest economy.
+          Unlock the German speaking blockchain market with hands on expertise and end to end support to launch and scale physical Web3 products.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-8 sm:mb-12 px-4">
@@ -100,9 +100,9 @@ const Hero = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-4xl mx-auto px-2">
             {[
-              { icon: Truck, title: 'Supply Chain', desc: 'From Fulfillment to Distribution' },
-              { icon: Users, title: 'Network', desc: 'Use our strong network in the German community.' },
-              { icon: Megaphone, title: 'Marketing', desc: 'Digital to Analogue Branding' }
+              { icon: Truck, title: 'Supply Chain', desc: 'From logistics to distribution.' },
+              { icon: Users, title: 'Marketplaces', desc: 'Use our strong network to list on major marketplaces.' },
+              { icon: Megaphone, title: 'Marketing', desc: 'From Online to Offline Branding that works.' }
             ].map(({ icon: Icon, title, desc }, index) => (
               <div 
                 key={title}

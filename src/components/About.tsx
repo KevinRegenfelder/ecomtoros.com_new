@@ -38,12 +38,12 @@ const About = () => {
     {
       icon: TrendingUp,
       title: 'Local Market Experts',
-      description: 'Over a decade of e-commerce experience in DACH — enabling smooth entry, growth, and brand localization.'
+      description: 'Over a decade of e-commerce experience in German speaking countries — enabling smooth entry, growth, and brand localization.'
     },
     {
       icon: Users,
       title: 'The Team',
-      description: '10+ specialists focused on launching crypto hardware — tailored for the German market and consumers.'
+      description: '10+ specialists focused on launching crypto hardware — tailored for the German speaking market and consumers.'
     },
     {
       icon: Network,
@@ -53,7 +53,7 @@ const About = () => {
     {
       icon: Rocket,
       title: 'Full Go-to-Market Support',
-      description: 'We deliver a complete launch setup — from strategy to execution — to build lasting brands in Germany.'
+      description: 'We deliver a complete launch setup — from strategy to execution — to build lasting brands in Germany speaking countries.'
     }
   ];
 
@@ -89,9 +89,9 @@ const About = () => {
             </span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed px-2">
-            With over a decade of e-commerce experience, we've built strong partnerships and connections. 
-            Our focus is to establish your blockchain-based product—such as a hardware wallet—on the German market and grow your brand. 
-            We use both proven marketing strategies and unique, network-driven tactics unavailable elsewhere.
+          With over a decade of e-commerce experience, we’ve built strong partnerships and lasting connections. 
+          Our focus is to establish your physical Web3 product in the German speaking market and grow your brand. 
+          We combine proven marketing strategies with unique, network driven tactics you won’t find anywhere else.
           </p>
         </div>
 
@@ -128,8 +128,8 @@ const About = () => {
           <div className="inline-flex items-center space-x-2 px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-primary-600/20 to-secondary-600/20 rounded-full border border-primary-500/30">
             <span className="w-2 h-2 sm:w-3 sm:h-3 bg-primary-400 rounded-full animate-pulse"></span>
             <span className="text-sm sm:text-base text-secondary-300">
-              <span className="hidden sm:inline">From concept to consumer — powering crypto growth in Germany</span>
-              <span className="sm:hidden">Powering crypto growth in Germany</span>
+              <span className="hidden sm:inline">From concept to consumer — powering crypto growth in Germany speaking countries</span>
+              <span className="sm:hidden">Tailored for Germany speaking countries</span>
             </span>
           </div>
         </div>

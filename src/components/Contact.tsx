@@ -153,9 +153,9 @@ const Contact = () => {
       description: 'Send us an email anytime'
     },
     {
-      icon: Phone,
+      icon: Hash,
       title: 'Message Us',
-      value: '@ecomtoros',
+      value: '@kevinregenfelder',
       description: 'Send us a message on Telegram'
     }
   ];
@@ -233,15 +233,15 @@ const Contact = () => {
               <ul className="space-y-2 text-secondary-300 text-xs sm:text-sm">
                 <li className="flex items-center space-x-2">
                   <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-primary-400" />
-                  <span>24/7 Support Available</span>
+                  <span>German speaking Market Specialists</span>
                 </li>
                 <li className="flex items-center space-x-2">
                   <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-primary-400" />
-                  <span>Free Initial Consultation</span>
+                  <span>10+ Years e-commerce Experience</span>
                 </li>
                 <li className="flex items-center space-x-2">
                   <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-primary-400" />
-                  <span>Industry Experts</span>
+                  <span>End-to-End Solutions</span>
                 </li>
               </ul>
             </div>

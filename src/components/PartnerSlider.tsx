@@ -139,7 +139,7 @@ const PartnerSlider = () => {
             </span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed px-2">
-            From marketplaces and marketing to fulfillment — our partner network delivers an all-in-one solution tailored for crypto hardware in the German market.
+            From marketplaces and marketing to fulfillment — our partner network delivers an all in one solution tailored for crypto hardware in the German speaking market.
           </p>
         </div>
 
@@ -267,8 +267,8 @@ const PartnerSlider = () => {
       {/* CTA Section */}
       <div className="mt-16 sm:mt-20 text-center px-4 sm:px-6">
         <div className="inline-block p-6 sm:p-8 rounded-xl sm:rounded-2xl bg-gradient-to-r from-primary-600/20 to-secondary-600/20 backdrop-blur-sm border border-primary-500/30">
-          <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-white">Ready to Launch in the German Market?</h3>
-          <p className="text-sm sm:text-base text-secondary-300 mb-4 sm:mb-6">Let's bring your crypto hardware or blockchain brand to life — with strategy, speed, and local know-how.</p>
+          <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-white">Ready to Launch in the German speaking Market?</h3>
+          <p className="text-sm sm:text-base text-secondary-300 mb-4 sm:mb-6">Let's bring your crypto hardware brandto life — with strategy, speed, and local know how.</p>
           <a 
             href="#contact" 
             className="inline-block px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-primary-600 to-secondary-600 rounded-full hover:from-primary-700 hover:to-secondary-700 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-primary-500/25 font-semibold text-sm sm:text-base text-white"

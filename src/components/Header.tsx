@@ -58,7 +58,7 @@ const Header = () => {
                   EcomToros GmbH
                 </span>
                 <span className="text-xs text-gray-300 -mt-1 font-medium tracking-wide">
-                  Building Brands in Germany
+                  DACH Brand Building
                 </span>
               </div>
             </a>

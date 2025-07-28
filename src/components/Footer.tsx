@@ -22,73 +22,10 @@ const Footer = () => {
     legalNotice: {
       title: 'Legal Notice',
       content: `
-        <h3 class="text-base sm:text-lg font-semibold mb-4">EcomToros GmbH</h3>
-        <p class="mb-3 text-sm sm:text-base"><strong>Address:</strong><br/>
-        Musterstraße 123<br/>
-        12345 Musterstadt<br/>
-        Germany</p>
-        
-        <p class="mb-3 text-sm sm:text-base"><strong>Contact:</strong><br/>
-        Email: mail@ecomtoros.com<br/>
-        Phone: +49 123 456 789</p>
-        
-        <p class="mb-3 text-sm sm:text-base"><strong>Commercial Register:</strong><br/>
-        District Court: Amtsgericht Musterstadt<br/>
-        Registration Number: HRB 12345</p>
-        
-        <p class="mb-3 text-sm sm:text-base"><strong>VAT ID:</strong><br/>
-        DE123456789</p>
-        
-        <p class="mb-3 text-sm sm:text-base"><strong>Managing Director:</strong><br/>
-        Kevin Regenfelder</p>
-        
-        <p class="mb-3 text-sm sm:text-base"><strong>Responsible for content:</strong><br/>
-        Kevin Regenfelder<br/>
-        EcomToros GmbH<br/>
-        Musterstraße 123<br/>
-        12345 Musterstadt</p>
-      `
-    },
-    terms: {
-      title: 'Terms and Conditions',
-      content: `
-        <h3 class="text-base sm:text-lg font-semibold mb-4">Terms and Conditions</h3>
-        
-        <h4 class="font-semibold mb-2 text-sm sm:text-base">1. General</h4>
-        <p class="mb-3 text-sm sm:text-base">These terms and conditions apply to all services provided by EcomToros GmbH.</p>
-        
-        <h4 class="font-semibold mb-2 text-sm sm:text-base">2. Services</h4>
-        <p class="mb-3 text-sm sm:text-base">We provide crypto hardware and Web3 go-to-market services in the DACH region.</p>
-        
-        <h4 class="font-semibold mb-2 text-sm sm:text-base">3. Payment Terms</h4>
-        <p class="mb-3 text-sm sm:text-base">Payment is due within 30 days of invoice date unless otherwise agreed.</p>
-        
-        <h4 class="font-semibold mb-2 text-sm sm:text-base">4. Liability</h4>
-        <p class="mb-3 text-sm sm:text-base">Our liability is limited to the amount of the service fee paid.</p>
-        
-        <h4 class="font-semibold mb-2 text-sm sm:text-base">5. Governing Law</h4>
-        <p class="mb-3 text-sm sm:text-base">These terms are governed by German law.</p>
-      `
-    },
-    privacy: {
-      title: 'Privacy Policy',
-      content: `
-        <h3 class="text-base sm:text-lg font-semibold mb-4">Privacy Policy</h3>
-        
-        <h4 class="font-semibold mb-2 text-sm sm:text-base">1. Data Collection</h4>
-        <p class="mb-3 text-sm sm:text-base">We collect only the data necessary to provide our services and improve user experience.</p>
-        
-        <h4 class="font-semibold mb-2 text-sm sm:text-base">2. Data Usage</h4>
-        <p class="mb-3 text-sm sm:text-base">Your data is used exclusively for service provision and communication.</p>
-        
-        <h4 class="font-semibold mb-2 text-sm sm:text-base">3. Data Protection</h4>
-        <p class="mb-3 text-sm sm:text-base">We implement appropriate security measures to protect your personal data.</p>
-        
-        <h4 class="font-semibold mb-2 text-sm sm:text-base">4. Your Rights</h4>
-        <p class="mb-3 text-sm sm:text-base">You have the right to access, correct, or delete your personal data.</p>
-        
-        <h4 class="font-semibold mb-2 text-sm sm:text-base">5. Contact</h4>
-        <p class="mb-3 text-sm sm:text-base">For privacy concerns, contact us at: mail@ecomtoros.com</p>
+        <br>EcomToros GmbH<br>Hauptstra&szlig;e 35<br>86391 Stadtbergen<br>Germany<br><br>Phone.: +49 (0)821 899848 21<br>e-mail: mail@ecomtoros.com<br><br>Register court: Augsburg<br>Register number: HRB 40351<br><br>Managing Director: Markus Schmid, Kevin Regenfelder<br><br>Sales tax identification number: DE369777332<br><br>We are neither obliged nor willing to participate in dispute resolution proceedings before a consumer arbitration board.<br><br>Member of the "Fairness in Trade" initiative.<br>Further information: <a target="_blank" href="https://www.fairness-im-handel.de" rel="noopener">https://www.fairness-im-handel.de</a></div>
+        <div id="itkanzlei_txt_copyright" style="font-size: 12px; margin-top: 8em;">
+        <div style="display: inline-block; vertical-align: top; margin-left: 5px; float: right; white-space: nowrap;">Version: 28.07.2025, 15:56:31 Clock</div>
+        <div style="clear: right;"></div>
       `
     }
   };
@@ -96,7 +33,7 @@ const Footer = () => {
   const socialLinks = [
     { icon: Twitter, href: 'https://x.com/ecomtoros', label: 'Twitter' },
     { icon: Mail, href: 'mailto:mail@ecomtoros.com', label: 'Email' },
-    { icon: MessageCircle, href: 'https://t.me/ecomtoros', label: 'Telegram' }
+    { icon: MessageCircle, href: 'https://t.me/kevinregenfelder', label: 'Telegram' }
   ];
 
   return (
@@ -122,8 +59,7 @@ const Footer = () => {
               </div>
               
               <p className="text-sm sm:text-base text-secondary-400 mb-4 sm:mb-6 max-w-md mx-auto leading-relaxed">
-                Pioneering the future of decentralized technology. We build secure, 
-                scalable, and innovative Web3 solutions that empower businesses and individuals.
+              Launch and scale your physical Web3 product in the German speaking market — with local know how and end to end execution.
               </p>
 
               {/* Social Links */}
@@ -151,20 +87,6 @@ const Footer = () => {
               className="text-xs sm:text-sm text-secondary-400 hover:text-primary-400 transition-colors duration-300 font-medium"
             >
               Legal Notice
-            </button>
-            <span className="hidden sm:block text-primary-400">•</span>
-            <button 
-              onClick={() => setActivePopup('terms')}
-              className="text-xs sm:text-sm text-secondary-400 hover:text-primary-400 transition-colors duration-300 font-medium"
-            >
-              Terms and Conditions
-            </button>
-            <span className="hidden sm:block text-primary-400">•</span>
-            <button 
-              onClick={() => setActivePopup('privacy')}
-              className="text-xs sm:text-sm text-secondary-400 hover:text-primary-400 transition-colors duration-300 font-medium"
-            >
-              Privacy Policy
             </button>
           </div>
         </div>

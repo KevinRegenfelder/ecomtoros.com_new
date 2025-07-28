@@ -12,9 +12,9 @@ const Stats = () => {
   });
 
   const finalValues = {
-    projects: 2500000,
+    projects: 2600000,
     clients: 60,
-    lines: 670000,
+    lines: 470000,
     awards: 10
   };
 
@@ -108,7 +108,7 @@ const Stats = () => {
   value: animatedValues.lines,
   suffix: '+',
   label: 'Products Fulfilled',
-  description: 'Delivered via our in-house fulfillment & logistics network',
+  description: 'Delivered via our in house fulfillment & logistics network',
   color: 'from-primary-400 to-secondary-400'
 },
 {
@@ -116,7 +116,7 @@ const Stats = () => {
   value: animatedValues.awards,
   suffix: '+',
   label: 'Team Members',
-  description: 'Cross-functional experts — from engineering to execution',
+  description: 'Cross functional experts — from engineering to execution',
   color: 'from-secondary-400 to-primary-300'
 }
   ];
@@ -150,10 +150,10 @@ const Stats = () => {
               We are pioneers 
             </span>
             <br />
-            <span className="text-white">in the Crypto Hardware space</span>
+            <span className="text-white">in the Web3 Hardware space</span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-secondary-300 max-w-3xl mx-auto leading-relaxed px-2">
-          We are specialists in crypto hardware and Web3 go-to-market. Our mission is to bring blockchain products to life — accessible, localized, and built to grow in the German-speaking world.
+          We are specialists in crypto hardware and Web3 go to market. Our mission is to bring blockchain products to life — accessible, localized, and built to grow in the German speaking world.
           </p>
         </div>
 
@@ -224,7 +224,7 @@ const Stats = () => {
                   <span className="bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent text-lg sm:text-xl">we got the whole DACH section for you!</span>
                 </h3>
                 <p className="text-base sm:text-lg text-secondary-300 mt-3 sm:mt-4">
-                  Strong connections across the German-speaking region with strategic positioning in all three countries.
+                  Strong connections across the German speaking region with strategic positioning in all three countries.
                 </p>
               </div>
               

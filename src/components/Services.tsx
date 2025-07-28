@@ -40,8 +40,8 @@ const Services = () => {
     {
       icon: Code,
       title: 'Performance Marketing',
-      description: 'Data-driven online campaigns tailored for growth across the DACH region.',
-      features: ['Meta Ads', 'Google Ads', 'Newsletter Marketing', 'Marketing Automation'],
+      description: 'Data driven online campaigns tailored for growth across the German speaking regions.',
+      features: ['Meta Ads', 'Google Ads', 'Newsletter Marketing', 'Marketing Automations'],
       color: 'from-primary-500 to-secondary-500'
     },
     {
@@ -54,8 +54,8 @@ const Services = () => {
     {
       icon: Coins,
       title: 'Experiential Marketing',
-      description: 'Real-world exposure for your brand — targeted, creative, and regionally effective.',
-      features: ['Out-of-Home Ads', 'Print Collabs', 'Street Campaigns', 'IRL Activations'],
+      description: 'Real world exposure for your brand — targeted, creative, and regionally effective.',
+      features: ['Out of Home Ads', 'Print Collabs', 'Street Campaigns', 'IRL Activations'],
       color: 'from-primary-400 to-secondary-400'
     },
     {
@@ -73,7 +73,7 @@ const Services = () => {
     {
       icon: Globe,
       title: 'Marketplace Listings',
-      description: 'High-converting, native listings on top EU marketplaces.',
+      description: 'High converting, native listings on top EU marketplaces.',
       features: [
         'Top platforms covered',
         'Native German copy',
@@ -99,32 +99,32 @@ const Services = () => {
   const roadmapSteps = [
     {
       step: '01',
-      title: 'Discovery & Strategy',
-      description: 'We analyze your project and create a tailored go-to-market strategy for the DACH region.',
+      title: 'First Contact',
+      description: 'You find us and get a first impression of our expertise, experience, and track record in bringing physical Web3 products to the German speaking market.',
       status: 'completed'
     },
     {
       step: '02',
-      title: 'Market Research',
-      description: 'Deep dive into the German-speaking market to identify opportunities and target audiences.',
+      title: 'Reach Out',
+      description: 'We carefully review your inquiry to assess whether there’s a strong fit, as we only take on projects where we see real potential and shared ambition.',
       status: 'active'
     },
     {
       step: '03',
-      title: 'Campaign Development',
-      description: 'Create compelling marketing campaigns across multiple channels and platforms.',
+      title: 'Brand Analysis',
+      description: 'We analyze your brand, your goals, and your current positioning to understand what you truly want to achieve in the DACH region.',
       status: 'pending'
     },
     {
       step: '04',
-      title: 'Launch & Execution',
-      description: 'Execute the marketing strategy with real-time optimization and performance tracking.',
+      title: 'Customized Offer',
+      description: 'You receive a tailored proposal outlining different ways to branding your product into the German speaking market – and you choose what fits your vision.',
       status: 'pending'
     },
     {
       step: '05',
-      title: 'Scale & Optimize',
-      description: 'Scale successful campaigns and continuously optimize for maximum ROI and growth.',
+      title: 'Execution & Optimization',
+      description: 'We implement your campaigns, set up everything needed, and continuously optimize to maximize your impact and growth.',
       status: 'pending'
     }
   ];
@@ -219,7 +219,7 @@ const Services = () => {
                 href="/#contact" 
                 className="flex items-center text-primary-400 group-hover:text-primary-300 transition-colors duration-300"
               >
-                <span className="text-xs sm:text-sm font-semibold">Learn More</span>
+                <span className="text-xs sm:text-sm font-semibold">And More</span>
                 <ArrowRight className={`w-3 h-3 sm:w-4 sm:h-4 ml-2 transition-transform duration-300 ${
                   hoveredCard === index ? 'translate-x-2' : ''
                 }`} />
@@ -235,11 +235,11 @@ const Services = () => {
           <div className="text-center mb-8 sm:mb-12">
             <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">
               <span className="bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent">
-                Our Process
+              How We Work
               </span>
             </h3>
             <p className="text-base sm:text-lg text-secondary-300 max-w-2xl mx-auto px-2">
-              A proven 5-step methodology to launch and scale your crypto hardware in the DACH region
+            A proven 5 step process to launch and scale your crypto hardware across the DACH market — designed to make our collaboration as efficient and focused as possible.
             </p>
           </div>
 
